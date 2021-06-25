@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>Image Diluter - ArisKap</title>
+	<link rel="icon" href="ENTER_HERE" />
+	<link rel="stylesheet" href="../styles.css" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+
+<body>
+
+	<div class="nav" id="nav">
+		<a href="../" class="nav-link">ArisKap</a>
+		<div onclick="openNav()" id="hamburger-container">
+			<div class="hamburger"></div>
+			<div class="hamburger"></div>
+			<div class="hamburger"></div>
+		</div>
+		<a class="nav-link" href="../#news">News</a>
+		<a class="nav-link" href="../contact">Contact</a>
+		<a class="nav-link" href="../#about">About</a>
+		<span class="nav-link dropdown-title selected">Projects<span class="arrow-down selected"></span>
+			<div class="dropdown">
+				<a href="../flawfull" class="dropdown-link">Flawfull - Web Browser</a>
+				<a href="../auto-door" class="dropdown-link">Auto Door</a>
+				<a href="../stream" class="dropdown-link">Streaming</a>
+				<a href="../chargetech" class="dropdown-link">ChargeTech - Website</a>
+				<a href="../discord-bot" class="dropdown-link">Discord Bot</a>
+				<a href="./" class="dropdown-link">Image Diluter</a>
+				<div class="dropdown-link dropdown-title">Future Projects <span class="arrow-right"></span>
+					<div class="dropdown">
+						<a href="../flawfull-os" class="dropdown-link">Flawfull - OS</a>
+						<a href="../flawfull-lang" class="dropdown-link">Flawfull - Programming Language</a>
+					</div>
+				</div>
+			</div>
+		</span>
+	</div>
+
+	<div class="under-nav"></div>
+
+	<!-- <div class="notice"><span class="warning"></span>Coming soon...</div> -->
+
+	<div class="title">Image Diluter<div class="title-line-div"></div></div>
+
+	<div class="info">Image Diluter is a Python program that uses the the library PIL to work. 
+		At the moment, it can:
+		<div class="info-left">
+			<ul>
+				<li><a href="#pixelate">Pixelate images</a></li>
+				<li><a href="#high-contrast">Convert images to high-contrast</a></li>
+				<li><a href="#combine">Combine two images</a></li>
+				<li>And more is in the making...</li>
+			</ul>
+		</div>
+	</div>
+
+	<div id="pixelate" class="subtitle">Pixelation<div class="title-line-div"></div></div>
+
+	<code class="block prettyprint lang-py">from PIL import Image
+
+img_name = input("Enter image: ")
+plug = input("Enter pixel amount: ")
+plug = int(plug)
+
+try:
+	image = Image.open(img_name)
+except:
+	print("Image not found")
+
+file_type = img_name.split(".")[1]
+
+if file_type == "JPEG" or file_type == "jpg":
+	rgb_image = image.convert("RGB")
+else:
+	rgb_image = image.convert('RGBA')
+
+pix = rgb_image.load()
+width = rgb_image.size[0]
+height = rgb_image.size[1]
+totalR = 0
+totalG = 0
+totalB = 0
+total = 0
+for i in range(1, height):
+	for j in range(1, width):
+
+		pixs = [ ]
+
+		for i2 in range(plug):
+			for j2 in range(plug):
+				thing = [ j + j2, i + i2]
+				pixs.append(thing)
+
+		avgR = 0
+		avgG = 0
+		avgB = 0
+
+		for k in pixs:
+			if k[0] >= width or k[1] >= height:
+				continue
+			else:
+				p = pix[k[0], k[1]]
+				avgR += p[0]
+				avgG += p[1]
+				avgB += p[2]
+
+		avgR /= (plug * plug)
+		avgG /= (plug * plug)
+		avgB /= (plug * plug)
+
+		for k in pixs:
+			if k[0] >= width or k[1] >= height:
+				continue
+			else:
+				pix[k[0], k[1]] = ( round(avgR), round(avgG), round(avgB) )
+				
+	
+
+final_image_name = img_name[0:-4] + "_pixel." + file_type
+
+rgb_image.save(final_image_name)</code>
+
+	<div id="high-contrast" class="subtitle">High-Contrast Images<div class="title-line-div"></div></div>
+
+	<code class="block prettyprint">from PIL import Image
+
+img_name = input("Enter image: ")
+
+while (img_name != "quit"):
+
+	try:
+		image = Image.open(img_name)
+	except:
+		print("Image not found")
+		break
+
+	file_type = img_name.split(".")[1]
+
+	if file_type == "JPEG" or file_type == "jpg":
+		rgb_image = image.convert("RGB")
+	else:
+		rgb_image = image.convert('RGBA')
+
+	pix = rgb_image.load()
+	width = rgb_image.size[0]
+	height = rgb_image.size[1]
+	totalR = 0
+	totalG = 0
+	totalB = 0
+	total = 0
+	for i in range(1, height):
+		for j in range(1, width):
+			total += 1
+			if type(pix[j, i]) == int:
+				rgb_value = 255 - pix[j, i]
+				print("what")
+			else:
+				r = 255 - pix[j, i][0] 
+				g = 255 - pix[j, i][1]
+				b = 255 - pix[j, i][2]
+				totalR += pix[j, i][0]
+				totalG += pix[j, i][1]
+				totalB += pix[j, i][2]
+				if rgb_image.mode == "RGBA":
+					if pix[j, i][3] == 0:
+						r = 0
+						g = 0
+						b = 0
+				rgb_value = ( r, g, b )
+			pix[j, i] = rgb_value
+
+	final_image_name = img_name[0:-4] + "_converted." + file_type
+
+	rgb_image.save(final_image_name)
+
+	img_name = input("Enter image: ")</code>
+
+	<div class="subtitle" id="combine">Combining Images<div class="title-line-div"></div></div>
+
+	<code class="block prettyprint">from PIL import Image
+
+img1 = input("Image #1: ")
+img2 = input("Image #2: ")
+
+try:
+	image1 = Image.open(img1)
+	image2 = Image.open(img2)
+except:
+	print("Image not found")
+
+#use a class
+
+file_type1 = img1.split(".")[1]
+file_type2 = img2.split(".")[1]
+
+if file_type1 == "JPEG" or file_type1 == "jpg":
+	rgb_image1 = image1.convert("RGB")
+else:
+	rgb_image1 = image1.convert('RGBA')
+
+if file_type2 == "JPEG" or file_type2 == "jpg":
+	rgb_image2 = image2.convert("RGB")
+else:
+	rgb_image2 = image2.convert('RGBA')
+
+
+if rgb_image1.size[1] > rgb_image2.size[1]:
+	newImg = image2.resize((rgb_image1.size[0], rgb_image1.size[1]))
+	newImg.save("testing.png")
+	sameImg = rgb_image1
+	sameImgName = img1[0:-4]
+	newImgName = img2[0:-4]
+else:
+	newImg = image1.resize((rgb_image2.size[0], rgb_image2.size[1]))
+	newImg.save("testing.png")
+	sameImg = rgb_image2
+	sameImgName = img2[0:-4] #rewrite this to work with JPEG
+	newImgName = img1[0:-4]
+
+
+
+pix1 = sameImg.load()
+width1 = sameImg.size[0]
+height1 = sameImg.size[1]
+
+pix2 = newImg.load()
+width2 = newImg.size[0]
+height2 = newImg.size[1]
+
+
+
+
+for i in range (1, height1):
+	for j in range(1, width1):
+		r1 = pix1[j, i][0]
+		g1 = pix1[j, i][1]
+		b1 = pix1[j, i][2]
+
+		r2 = pix2[j, i][0]
+		g2 = pix2[j, i][1]
+		b2 = pix2[j, i][2]
+
+		r = (r1 + r2) / 2
+		g = (g1 + g2) / 2
+		b = (b1 + b2) / 2
+		
+		rgb_value = (round(r), round(g), round(b))
+		pix1[j, i] = rgb_value
+
+
+final_image_name = sameImgName + "_" + newImgName + "_converted2.png"
+
+		sameImg.save(final_image_name)</code>
+
+	<script src="../script.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+</body>
+
+
+
+</html>

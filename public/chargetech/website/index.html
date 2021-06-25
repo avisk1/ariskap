@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>ChargeTech</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="https://i.ibb.co/KhR54Sk/Untitled-drawing.jpg" />
+  </head>
+
+  <body>
+
+    <div id="nav">
+      <img onclick="nav('https://chargetech-website.avisk.repl.co/')" id="nav-logo" src="https://docs.google.com/drawings/d/e/2PACX-1vRradP64lTdU1XM5M33EUtf4s5b6St04A85nHMU-Y5mW3IaAry87tn41rusC_LnSWvR1qv9j_sf66aR/pub?w=428&amp;h=129" />
+      <!-- <a class="nav-link selected" id="home" href="./">Entrepreneur Portfolio</a> -->
+      <!-- second -->
+      <!-- <span class="dropdown-container"> -->
+      <span class="nav-link drop-container" id="entries">Tech
+        <span class="dropdown">
+          <a href="#constacharge">ConstaCharge</a>
+        </span>
+      </span>
+        <span class="nav-link drop-container">About
+          <span class="dropdown">
+            <a href="#about">Our Company</a>
+            <a href="#commercial">Commercial</a>
+          </span>
+        </span>
+        <a href="./international" class="nav-link">Going International</a>
+        <a onclick="togDarkMode()" id="dark" class="nav-link" style="font-size: 5px !important">Dark Mode</a>
+      
+      <!-- </span> -->
+    </div>
+
+    <!-- <img id="front-img" src="https://blog.malwarebytes.com/wp-content/uploads/2015/05/photodune-9089398-mobile-devices-s-900x506.jpg" /> -->
+
+    <!-- add classes to white text and change it to grey in dark mode -->
+    <div class="container">
+      <img id="front-img" src="https://www.groovypost.com/wp-content/uploads/2018/01/battery-life-laptop-power-featured2.jpg" />
+      <div class="img-text"><span class="switch">Always </span><span class="green">Charging. </span><span class="switch">Always</span><span class="green"> Saving.</span>
+      </div>
+    </div>
+
+    <div id="about" class="title">ChargeTech<div class="title-underline"></div></div>
+
+    
+
+    <p class="info">
+      ChargeTech is a new business dedicated to innovating and improving charging technology. Our goal is to make devices charge faster all the while saving and reusing energy, starting with our product <a href="#constacharge">ConstaCharge</a>.
+    </p>
+
+    <div id="constacharge" class="title">ConstaCharge<div class="title-underline"></div></div>
+
+    <p class="info" style="margin-bottom: 0px !important">
+      Have you ever ran out of battery power on your portable device when you really needed it? Maybe you were in the middle of an important online business meeting, or on a phone call with your friends. Whatever the case is, if you have experienced running out of battery, this product is for you. 
+    </p>
+
+    <img id="computer" src="https://www.iwaste.co.uk/images/2020/02/27/laptop-recycling__1500x955.jpg" class="front-img"/>
+
+    <div class="point-container">
+      <span><img class="icon" src="https://i.ibb.co/SxMLyC4/output-onlinepngtools-2.png" />Constantly charges your device while it's on, not only saving battery life but energy and money as well</span>
+      <span><img class="icon" src="https://i.ibb.co/PxK1srk/output-onlinepngtools-1.png" />Valid for all mobile devices, whether that be a laptop, smartphone, or ipad.</span>
+      <span><img style="transform: rotate(-90deg)" class="icon" src="https://lh3.google.com/u/0/d/1-x6t9oMduSVH__DQzY6zxDJQ6ustXSRD=w1366-h568-iv1" />Never run out of battery life again and always be charging.</span>
+    </div>
+
+    <div id="howitworks" class="title">How it Works<div class="title-underline"></div></div>
+
+    <p class="info">
+      ConstaCharge works by <span class="green">recycling</span> the energy produced by your device into charging power, so as long as you are using your device, it will constantly be charging in the background.
+    </p>
+
+    <div id="commercial" class="title">Commercial<div class="title-underline"></div></div>
+    
+    <video class="video" width="320" height="240" controls>
+      <source src="ConstaCharge Commercial.mp4" type="video/mp4">
+      <source src="ConstaCharge Commercial.ogg" type="video/ogg">
+    A commercial goes here.
+    </video>
+
+
+    <script src="script.js"></script>
+  </body>
+</html>

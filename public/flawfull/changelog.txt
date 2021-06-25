@@ -1,0 +1,100 @@
+<h2>Updates | v1.2.4100 (February 7, 2021)</h2>
+<hr />
+<ul>
+  <li>Fixed modals not scrolling</li>
+  <li>Created left panel</li>
+  <li>Added search history</li>
+  <li>Added reload shortcut</li>
+  <li>Added notifications</li>
+  <li>Fixed links opening in a new tab</li>
+  <li>Added a context menu for tabs</li>
+  <li><b>Added webview events (finally)</b></li>
+  <li><b>Added a crappy bookmarking system</b></li>
+  <li><b>Added open in new tab</b></li>
+</ul>
+<h2>Future Updates</h2>
+<hr />
+<ul>
+  <li>Fix the crappy bookmarking system</li>
+</ul>
+
+<h2>Updates | v1.2.4060 (December 13, 2020)</h2>
+    <hr />
+    <ul>
+      <li>(Hopefully) Fixed update progress</li>
+      <li>Added slogan</li>
+    </ul>
+<hr />
+
+<h2>Updates | v1.2.4050 (November 29, 2020)</h2>
+<hr />
+<ul>
+  <li>Changed (hopefully) website and update location</li>
+</ul>
+<hr />
+
+<h2>Updates | v1.2.4040 (October 29, 2020)</h2>
+<hr />
+<ul>
+  <li>Fixed disabled typing for search bar</li>
+</ul>
+<hr />
+
+<h2>Updates | v1.2.4030 (October 28, 2020)</h2>
+<hr />
+<ul>
+  <li>Added more bugs</li>
+</ul>
+<hr />
+
+<h2>Updates | v1.2.4020 (October 26, 2020)</h2>
+<hr />
+<ul>
+  <li>Higher bug chance</li>
+  <li>Opening new tabs resets the search bar</li>
+</ul>
+<hr />
+
+<h2>Updates | v1.2.4010 (October 21, 2020)</h2>
+<hr />
+<ul>
+  <li>Fixed changelog not working</li>
+</ul>
+<hr />
+
+<h2>Updates | v1.2.4000 (October 20, 2020)</h2>
+<hr />
+<ul>
+  <li>Fixed tab titles overlapping (again)</li>
+  <li>Fixed '+'s not being shown in search</li>
+  <li>Improved context menu</li>
+  <li>Gave tabs tooltips</li>
+  <li>Added website icons for each tab</li>
+  <li>Created a changelog</li>
+  <li>Added a reload button</li>
+</ul>
+<hr />
+
+<h2>Updates | v1.2.3980 (‎October ‎16, ‎2020)</h2>
+<hr />
+<ul>
+  <li style="font-weight: bold">Added Linux support</li>
+  <li>Compact tab titles</li>
+  <li>Fixed updating url for search bar during webview navigation</li>
+  <li>Provided a white background color for websites without one</li>
+  <li>Added a more...<i>attractive</i> About and Privacy section</li>
+  <li>Added Ctrl + W keyboard shortcut to close tabs</li>
+  <li>Provided a "Restart" button in case of update glitches</li>
+  <li>Moved search bar for larger webview</li>
+</ul>
+<hr />
+
+<h2>Updates | v1.2.3950 (‎October ‎11, ‎2020)</h2>
+<hr />
+<ul>
+  <li>Official release</li>
+  <li>Fixed the autoupdater (again)</li>
+  <li>Option to view newest updates</li>
+  <li>Fixed updating url for webview navigation</li>
+</ul>
+<hr />

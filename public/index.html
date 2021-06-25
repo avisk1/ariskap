@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>Home - ArisKap</title>
+	<link rel="icon" href="ENTER_IMAGE_HERE" />
+	<link rel="stylesheet" href="./styles.css" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+
+<body>
+
+
+
+	<div class="nav" id="nav">
+		<a href="./" class="nav-link selected">ArisKap</a>
+		<div onclick="openNav()" id="hamburger-container">
+			<div class="hamburger"></div>
+			<div class="hamburger"></div>
+			<div class="hamburger"></div>
+		</div>
+		<a class="nav-link" href="#news">News</a>
+		<a class="nav-link" href="./contact">Contact</a>
+		<a class="nav-link" href="#about">About</a>
+		<span class="nav-link dropdown-title">Projects<span class="arrow-down"></span>
+			<div class="dropdown">
+				<a href="./flawfull" class="dropdown-link">Flawfull - Web Browser</a>
+				<a href="./auto-door" class="dropdown-link">Auto Door</a>
+				<a href="./stream" class="dropdown-link">Streaming</a>
+				<a href="./chargetech" class="dropdown-link">ChargeTech - Website</a>
+				<a href="./discord-bot" class="dropdown-link">Discord Bot</a>
+				<a href="./image-diluter" class="dropdown-link">Image Diluter</a>
+				<div class="dropdown-link dropdown-title">Future Projects <span class="arrow-right"></span>
+					<div class="dropdown">
+						<a href="./flawfull-os" class="dropdown-link">Flawfull - OS</a>
+						<a href="./flawfull-lang" class="dropdown-link">Flawfull - Programming Language</a>
+					</div>
+				</div>
+			</div>
+		</span>
+	</div>
+
+	<div class="under-nav"></div>
+
+	<div class="subtitle">Projects<div class="title-line-div"></div></div>
+
+	<div class="project-container">
+		<div class="project-header">
+			<span class="img-container">
+				<img src="https://i.ibb.co/P1n29T6/hexagon24.png" />
+			  </span>
+			  <span class="summary-container">
+				<p>Flawfull</p>
+			  </span>
+		</div>
+		<div class="project-details">
+			<p>
+				Flawfull is a web browser created by using Chromium and Electron with the JavaScript runtime environment NodeJS. 
+				It was released on October 14th, 2020 and continues to get updates every so often. Flawfull boasts a working 
+				search system with multiple search engines, a history tracking system, a tab system, and much more.
+				<a href="./flawfull">Learn more.</a>
+			</p>
+		</div>
+	</div>
+
+	<div class="project-container">
+		<div class="project-header">
+			<span class="img-container">
+				
+			</span>
+			<span class="summary-container">
+				<p>Auto Door</p>
+			</span>
+		</div>
+		<div class="project-details">
+			<p>
+				Auto Door is a small door that's supposed to open and close automatically for cats to go in and out during the day. 
+				It will be built using an Arduino fitted with a motor, as well as a pulley system to help in the lifting process. 
+				Although it is currently in the planning stage, it should start coming together soon. 
+			</p>
+		</div>
+	</div>
+
+	<div class="project-container">
+		<div class="project-header">
+			<span class="img-container">
+				<img src="https://docs.google.com/drawings/d/e/2PACX-1vRradP64lTdU1XM5M33EUtf4s5b6St04A85nHMU-Y5mW3IaAry87tn41rusC_LnSWvR1qv9j_sf66aR/pub?w=428&h=129" />
+			</span>
+			<span class="summary-container">
+				<p>ChargeTech - Website</p>
+			</span>
+		</div>
+		<div class="project-details">
+			<p>
+				ChargeTech is a fictional business website created for a school business project. Its primary product is ConstaCharge, 
+				which is supposed to increase charging efficiency and save energy. <a href="./chargetech">Learn more.</a>
+			</p>
+		</div>
+	</div>
+
+	<div class="project-container">
+		<div class="project-header">
+			<span class="img-container">
+				<img style="border: 2px solid grey; border-radius: 100px" src="https://cdn.discordapp.com/avatars/619866782257119232/a7afca77d8712f23a3e829c51d38a4ec.png" />
+			</span>
+			<span class="summary-container">
+				<p>Discord Bot "Todd"</p>
+			</span>
+		</div>
+		<div class="project-details">
+			<p>
+				"Todd" was a Discord bot created to experiment with Discord.js that ended up sending the Astronomy Picture Of the Day 
+				every day in a Discord channel. It, or "he", uses a Nasa API to request the current APOD and then uses a CronJob to 
+				send a Discord embed featuring the image, as well as its description, photographer, and date. He is also able to 
+				censor swear words, return the weather forecast in any city, and make use of a number of different APIs (such as a Pokemon 
+				database and a random advice-giver). <a href="./discord-bot">Learn more.</a>
+			</p>
+		</div>
+	</div>
+
+	<div class="project-container">
+		<div class="project-header">
+			<span class="img-container">
+				
+			</span>
+			<span class="summary-container">
+				<p>Image Diluter</p>
+			</span>
+		</div>
+		<div class="project-details">
+			<p>
+				Image Diluter is a Python program that changes images in different ways, from combining multiple images together to 
+				pixelating them. <a href="./image-diluter">Learn more.</a>
+			</p>
+		</div>
+	</div>
+
+	<div class="subtitle" id="news">News</div><div class="title-line-div"></div>
+
+	
+	<div class="info-left">
+		<div class="subsubtitle left">Flawfull - Major Update (February 7, 2021)</div>
+		<ul>
+			<li>Fixed modals not scrolling</li>
+			<li>Created left panel</li>
+			<li>Added search history</li>
+			<li>Added reload shortcut</li>
+			<li>Added notifications</li>
+			<li>Fixed links opening in a new tab</li>
+			<li>Added a context menu for tabs</li>
+			<li><b>Added webview events (finally)</b></li>
+			<li><b>Added a less than perfect bookmarking system</b></li>
+			<li><b>Added open in new tab</b></li>
+		</ul>
+	</div>
+
+	<div class="subtitle" id="about">About</div><div class="title-line-div"></div>
+
+	<div class="info">I'm a high school student and this a website portfolio for all of my programming projects, all of which 
+		have been programmed by me (this website included). You can find my GitHub <a href="https://github.com/avisk1">here</a>.
+	</div>
+	
+	<script src="./script.js"></script>
+
+
+</body>
+
+
+
+</html>

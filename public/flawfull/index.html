@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>Flawfull - ArisKap</title>
+	<link rel="icon" href="https://i.ibb.co/P1n29T6/hexagon24.png" />
+	<link rel="stylesheet" href="../styles.css" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+
+<body>
+
+	<div class="nav" id="nav">
+		<a href="../" class="nav-link">ArisKap</a>
+		<div onclick="openNav()" id="hamburger-container">
+			<div class="hamburger"></div>
+			<div class="hamburger"></div>
+			<div class="hamburger"></div>
+		</div>
+		<a class="nav-link" href="../#news">News</a>
+		<a class="nav-link" href="../contact">Contact</a>
+		<a class="nav-link" href="../#about">About</a>
+		<span class="nav-link dropdown-title selected">Projects<span class="arrow-down selected"></span>
+			<div class="dropdown">
+				<a href="./" class="dropdown-link">Flawfull - Web Browser</a>
+				<a href="../auto-door" class="dropdown-link">Auto Door</a>
+				<a href="../stream" class="dropdown-link">Streaming</a>
+				<a href="../chargetech" class="dropdown-link">ChargeTech - Website</a>
+				<a href="../discord-bot" class="dropdown-link">Discord Bot</a>
+				<a href="../image-diluter" class="dropdown-link">Image Diluter</a>
+				<div class="dropdown-link dropdown-title">Future Projects <span class="arrow-right"></span>
+					<div class="dropdown">
+						<a href="../flawfull-os" class="dropdown-link">Flawfull - OS</a>
+						<a href="../flawfull-lang" class="dropdown-link">Flawfull - Programming Language</a>
+					</div>
+				</div>
+			</div>
+		</span>
+	</div>
+
+	<div class="under-nav"></div>
+
+	
+	<h1 class="title">Flawfull</h1>
+
+	<div class="title-line-div"></div>
+	<img onclick="ajaxTest()" class="center-icon" draggable="false" src="https://i.ibb.co/P1n29T6/hexagon24.png" />
+	<i class="slogan">Flawless is impossible</i>
+
+	<br />
+	<br />
+
+	<!-- <div class="page">
+		<div class="page-left">
+			<div class="body-text">Flawfull is a glorious web browser with plenty of bugs and glitches that was built by <a class="anchor" href="https://github.com/avisk1">avisk1</a> using a software framework called 
+				<a class="anchor" href="https://www.electronjs.org/">electron</a>.</div>
+		</div>
+		<div class="page-right">
+			<img class="display-image" src="https://i.ibb.co/ctZkswX/flawfull-img.png" />
+		</div>
+	</div> -->
+
+
+	<!-- <div class="info">
+		Flawfull is a glorious web browser with plenty of bugs and glitches that was built by <a href="https://github.com/avisk1">avisk1</a> using a software framework called 
+		<a class="anchor" href="https://www.electronjs.org/">electron</a>.
+	</div> -->
+	<div class="info">
+		Flawfull is a glorious web browser that was built by <a href="https://github.com/avisk1">avisk1</a> using a software framework called 
+		<a class="anchor" href="https://www.electronjs.org/">electron</a>. It was released on October 14th, 2020 and continues to get updates every so often. 
+		Flawfull boasts a working search system with multiple search engines, a history tracking system, a tab system, and much more.
+	</div>
+
+	<div class="features">
+		<div>Choose from a variety of different search engines such as  
+			Google, Bing, or Duck Duck Go</div><br />
+		<!-- CSS is the stupidest "language" ever -->
+		<!-- <img style="z-index: 99000; display:block; position: relative" src="https://icon-library.com/images/computer-bug-icon/computer-bug-icon-0.jpg" class="feature-image"></img> -->
+		<div>Browse freely without any sort of tracking or data collecting*<br /><br />
+		<small class="small">*On Flawfull's side only. Does not apply for search engines or Chromium</small></div><br />
+		<div>Customize the chance of possible bugs for advanced users</div><br />
+	</div>
+
+	<br />
+
+	<div class="download-container">
+		<a id="download-Windows" class="download">DOWNLOAD (Windows)</a>
+		<a id="download-Linux" class="download">DOWNLOAD (Linux)</a>
+		<a id="download-Mac" class="download unavailable">DOWNLOAD (MacOS)</a>
+	</div>
+
+	<div class="subtitle">Examples<div class="title-line-div"></div></div>
+
+	<a target="_blank" href="./flawfull_screenshot.png"><img class="display-image" src="./flawfull_screenshot.png" /></a>
+	<a target="_blank" href="./flawfull_screenshot2.png"><img class="display-image" src="./flawfull_screenshot2.png" /></a>
+
+
+	<script src="../script.js"></script>
+
+
+	<script>
+
+		function writeToServerFile() {
+			var data = new FormData();
+			data.append("data" , "Hello World!");
+			// var xhr = (window.XMLHttpRequest) ? new XMLHttpRequest() : new activeXObject("Microsoft.XMLHTTP");
+			const xhttp = new XMLHttpRequest();
+			xhttp.open( 'POST', './pleaseWork.php', true );
+			xhttp.send(data);
+		}
+
+		function ajaxTest() {
+			console.log("d");
+			const xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					document.getElementById("nav").innerHTML = this.responseText;
+					console.log("WORKED");
+				} else {
+					console.log("Failed");
+				}
+			};
+			xhttp.open("GET", "./test.txt", true);
+			xhttp.send();
+		}
+
+		const windowsDownload = document.getElementById("download-Windows");
+		const linuxDownload = document.getElementById("download-Linux");
+		const macDownload = document.getElementById("download-Mac");
+		const unavailables = document.getElementsByClassName("unavailable");
+		const downloadContainer = document.getElementById("download-container");
+
+		windowsDownload.href = "./Flawfull Setup 1.2.4110.exe";
+		linuxDownload.href = "./Flawfull-1.2.4110.AppImage";
+
+		[...unavailables].forEach((button) => {
+			button.title = "⚠ Feature currently unavailable";
+		})
+
+		
+
+
+	</script>
+
+
+</body>
+
+
+
+</html>
