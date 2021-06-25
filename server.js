@@ -1,13 +1,25 @@
-var express = require("express");
+const express = require("express");
+const mongoose = require("mongoose");
+require('dotenv').config();
 
-var app = express();
+//mongoose
+const dbURL = `mongodb+srv://${process.env.USERNAME}:<${process.env.PASSWORD}>@cluster0.xpx7r.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
+
+mongoose.connect(dbURL , (err) => { 
+  console.log("mongodb connected",err);
+});
+
+const Message = mongoose.model("Message",{ name : String, message : String})
+
+//express
+const app = express();
 
 // use the express-static middleware
-app.use(express.static("public"))
+app.use(express.static("public"));
 
-app.get('/', (req, res) => {
-  return res.send('<h1>Hello World!</h1><script>console.log("Hello world!")</script>')
-})
+// app.get('/', (req, res) => {
+//   return res.send('<h1>Hello World!</h1><script>console.log("Hello world!")</script>')
+// })
 
 // start the server listening for requests
 app.listen(process.env.PORT || 3000, 
