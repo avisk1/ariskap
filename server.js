@@ -6,7 +6,7 @@ require('dotenv').config();
 const dbURL = `mongodb+srv://${process.env.USERNAME}:<${process.env.PASSWORD}>@cluster0.xpx7r.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 
 mongoose.connect(dbURL , (err) => { 
-  console.log("mongodb connected",err);
+  console.log("mongodb connected", err);
 });
 
 const Message = mongoose.model("Message",{ name : String, message : String})
