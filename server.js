@@ -3,14 +3,10 @@ var express = require("express");
 var app = express();
 
 // use the express-static middleware
-app.use(express.static("public_html"))
+app.use(express.static("public"))
 
 app.get('/', (req, res) => {
-  return res.send('<script>console.log(Hello world!)</script>')
-})
-
-app.get("/", (req, res) => {
-  res.send("<h1>Hello World!</h1>")
+  return res.send('<h1>Hello World!</h1><script>console.log("Hello world!")</script>')
 })
 
 // start the server listening for requests
