@@ -6,10 +6,16 @@ require('dotenv').config();
 const dbURL = `mongodb+srv://${process.env.USERNAME}:${process.env.PASSWORD}@cluster0.xpx7r.mongodb.net/myFirstDatabase?retryWrites=true&w=majority&authSource=admin`;
 
 mongoose.connect(dbURL , (err) => { 
-  console.log("mongodb connected YAY!!!", err);
-}).catch((err) => {
-  console.log("Not Connected to Database ERROR! ", err);
+  console.log("mongodb connected YAY!!!...or not?", err);
 });
+
+mongoose.connect(dbURL)
+  .then(() => {
+      console.log("wait did it actually work?")
+  })
+  .catch(err => {
+      console.error('App starting error:', err);
+  });
 
 // const Message = mongoose.model("Message",{ name : String, message : String})
 
