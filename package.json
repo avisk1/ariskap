@@ -2,5 +2,26 @@
   "dependencies": {
     "express": "^4.17.1",
     "heroku": "^7.2.0"
-  }
+  },
+  "name": "app",
+  "description": "I hate you, git.",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avisk1/ariskap.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/avisk1/ariskap/issues"
+  },
+  "engines": {
+    "node": "12.16.3",
+    "npm": "7.12.0"
+  },
+  "homepage": "https://github.com/avisk1/ariskap#readme"
 }
