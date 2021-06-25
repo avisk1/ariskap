@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 require('dotenv').config();
 
 //mongoose
-const dbURL = `mongodb+srv://${process.env.USERNAME}:<${process.env.PASSWORD}>@cluster0.xpx7r.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
+const dbURL = `mongodb+srv://${process.env.USERNAME}:${process.env.PASSWORD}@cluster0.xpx7r.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 
 mongoose.connect(dbURL , (err) => { 
   console.log("mongodb connected", err);
