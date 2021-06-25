@@ -11,7 +11,7 @@ mongoose.connect(dbURL , (err) => {
   console.log("Not Connected to Database ERROR! ", err);
 });
 
-const Message = mongoose.model("Message",{ name : String, message : String})
+// const Message = mongoose.model("Message",{ name : String, message : String})
 
 //express
 const app = express();
