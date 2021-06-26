@@ -68,7 +68,7 @@
 
 			//sending the data
 			const xhr = new XMLHttpRequest();
-			xhr.open("POST", "/", true);
+			xhr.open("POST", "/stream", true);
 			xhr.setRequestHeader('Content-Type', 'application/json');
 			xhr.send(JSON.stringify({
 				name: name.value,
@@ -91,7 +91,7 @@
 				}
 				// end of state change: it can be after some time (async)
 			};
-			xhr.open('GET', "/", true);
+			xhr.open('GET', "/stream", true);
 			xhr.send();
 		}
 
