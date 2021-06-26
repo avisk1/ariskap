@@ -51,8 +51,52 @@
 	<input type="number" readonly="readonly" id="num" />
 	<button onclick="increment()">Add</button> -->
 
+	<input id="name" placeholder="Name" />
+	<input id="message" placeholder="Message" />
+	<button onclick="submit()">Send</button>
+
+	<p id="data"></p>
+	<button onclick="requestData()">Request Data</button>
+
 	
 	<script src="../script.js"></script>
+	<script>
+		function submit() {
+			const name = document.getElementById("name");
+			const message = document.getElementById("message");
+			console.log("Sending message...")
+
+			//sending the data
+			const xhr = new XMLHttpRequest();
+			xhr.open("POST", "/", true);
+			xhr.setRequestHeader('Content-Type', 'application/json');
+			xhr.send(JSON.stringify({
+				name: name.value,
+				message: message.value
+			}));
+		}
+		
+		function requestData() {
+			const placeholder = document.getElementById("data");
+			console.log("Requesting data...");
+
+			//requesting the data
+			const xhr = new XMLHttpRequest();
+			xhr.onreadystatechange = () => {
+				if (this.readyState != 4) return;
+				if (this.status == 200) {
+					// const data = JSON.parse(this.responseText);
+					const data = this.responseText;
+					placeholder.innerHTML = data;
+				}
+				// end of state change: it can be after some time (async)
+			};
+			xhr.open('GET', "/", true);
+			xhr.send();
+		}
+
+
+	</script>
 	<!-- <script src="./script.js"></script> -->
 
 
