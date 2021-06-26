@@ -87,7 +87,10 @@
 				if (this.status == 200) {
 					// const data = JSON.parse(this.responseText);
 					const data = this.responseText;
+					console.log(data);
 					placeholder.innerHTML = data;
+				} else {
+					console.log(`Failed: ${this.status}`);
 				}
 				// end of state change: it can be after some time (async)
 			};
