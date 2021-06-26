@@ -40,7 +40,7 @@ app.listen(process.env.PORT || 3000,
 	() => console.log("Server is running..."));
 
 //when a get request is sent to /stream (wants information)
-app.get('/stream', (req, res) => {
+app.get('/stream/', (req, res) => {
   //return message data from database
   console.log("A GET request has been sent to /stream");
   const obj = { msg: "A GET request has been sent to /stream" };
