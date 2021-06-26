@@ -43,7 +43,8 @@ app.listen(process.env.PORT || 3000,
 app.get('/stream', (req, res) => {
   //return message data from database
   console.log("A GET request has been sent to /stream");
-  res.send("A GET request has been sent to /stream");
+  const obj = { msg: "A GET request has been sent to /stream" };
+  res.send(obj);
 
   // Message.find({},(err, messages)=> {
     // res.send(messages);
