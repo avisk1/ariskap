@@ -68,8 +68,8 @@ app.post('/stream', (req, res) => {
 // use the express-static middleware (apparently has to be below request handlers)
 // app.use(express.static("public"));
 app.use("/", express.static("public"));
-app.use(express.json());
-app.use(express.urlencoded({extended: false}))
+// app.use(express.json());
+// app.use(express.urlencoded({extended: false}))
 
 // start the server listening for requests
 app.listen(process.env.PORT || 3000, 
