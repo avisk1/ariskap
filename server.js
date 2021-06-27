@@ -64,12 +64,14 @@ app.post('/stream', (req, res) => {
   // })
 });
 
-// start the server listening for requests
-app.listen(process.env.PORT || 3000, 
-	() => console.log("Server is running..."));
+
 
 // use the express-static middleware (apparently has to be below request handlers)
 app.use(express.static("public"));
+
+// start the server listening for requests
+app.listen(process.env.PORT || 3000, 
+	() => console.log("Server is running..."));
 
 
 
