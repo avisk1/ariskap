@@ -83,6 +83,14 @@ app.get('/stream', function (req, res) {
   res.send('hello world')
 })
 
+app.get('/stream/index.html', function (req, res) {
+  res.send('index.html')
+})
+
+app.get('/stream/script.js', function (req, res) {
+  res.send('script.js')
+})
+
 app.use("/", express.static("public"));
 
 app.listen(process.env.PORT || 3000, 
