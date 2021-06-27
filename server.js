@@ -45,7 +45,8 @@ app.get('/stream', (req, res) => {
     const obj = { msg: `A GET request has been sent to /stream from ${req.path}` };
     res.send(obj);
   } else {
-    console.log("Yay! It worked")
+    console.log("Yay! It worked");
+    return res.redirect("/stream")
   }
 
   // Message.find({},(err, messages)=> {
