@@ -42,6 +42,8 @@ app.get('/stream/index.html', (req, res) => {
   console.log(req.path);
   console.log(req.originalUrl);
   console.log("GET request to index.html");
+  const result = { msg: "Hello World!" };
+  res.json(result);
   // res.json("")
   // if (req.originalUrl == "/stream?page_load=false") {
   //   const obj = { msg: `A GET request has been sent to /stream from ${req.path}` };
