@@ -83,5 +83,7 @@ app.get('/stream', function (req, res) {
   res.send('hello world')
 })
 
+app.use("/", express.static("public"));
+
 
 
