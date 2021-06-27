@@ -78,40 +78,40 @@
 
 		// at=info method=GET path="/stream" host=ariskap.herokuapp.com request_id=1b658949-b651-4ae9-959b-6dd9e90fd18a fwd="174.115.244.87" dyno=web.1 connect=2ms service=5ms status=200 bytes=255 protocol=https
 		
-		function requestData() {
-			const placeholder = document.getElementById("data");
-			console.log("Requesting data...");
+		// function requestData() {
+		// 	const placeholder = document.getElementById("data");
+		// 	console.log("Requesting data...");
 
-			//requesting the data
-			const xhr = new XMLHttpRequest();
-			xhr.onreadystatechange = function() { 
-				if (this.readyState == 4 && this.status == 200) {
-					console.log(this.responseText);
-					placeholder.innerHTML = this.responseText;
-				} else {
-					console.log(this.readyState + ", " + this.status);
-				}
-			}
-			xhr.open("GET", "/stream", true); // true for asynchronous 
-			xhr.send();
+		// 	//requesting the data
+		// 	const xhr = new XMLHttpRequest();
+		// 	xhr.onreadystatechange = function() { 
+		// 		if (this.readyState == 4 && this.status == 200) {
+		// 			console.log(this.responseText);
+		// 			placeholder.innerHTML = this.responseText;
+		// 		} else {
+		// 			console.log(this.readyState + ", " + this.status);
+		// 		}
+		// 	}
+		// 	xhr.open("GET", "/stream", true); // true for asynchronous 
+		// 	xhr.send();
 
-			// const xhr = new XMLHttpRequest();
-			// xhr.onreadystatechange = () => {
-			// 	console.log(this.readyState);
-			// 	if (this.readyState != 4) return;
-			// 	if (this.status == 200) {
-			// 		// const data = JSON.parse(this.responseText);
-			// 		const data = this.responseText;
-			// 		console.log(data);
-			// 		placeholder.innerHTML = data;
-			// 	} else {
-			// 		console.log(`Failed: ${this.status}`);
-			// 	}
-			// 	// end of state change: it can be after some time (async)
-			// };
-			// xhr.open('GET', "/stream", true);
-			// xhr.send();
-		}
+		// 	// const xhr = new XMLHttpRequest();
+		// 	// xhr.onreadystatechange = () => {
+		// 	// 	console.log(this.readyState);
+		// 	// 	if (this.readyState != 4) return;
+		// 	// 	if (this.status == 200) {
+		// 	// 		// const data = JSON.parse(this.responseText);
+		// 	// 		const data = this.responseText;
+		// 	// 		console.log(data);
+		// 	// 		placeholder.innerHTML = data;
+		// 	// 	} else {
+		// 	// 		console.log(`Failed: ${this.status}`);
+		// 	// 	}
+		// 	// 	// end of state change: it can be after some time (async)
+		// 	// };
+		// 	// xhr.open('GET', "/stream", true);
+		// 	// xhr.send();
+		// }
 
 
 	</script>
