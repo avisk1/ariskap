@@ -66,7 +66,8 @@ app.post('/stream', (req, res) => {
 
 
 // use the express-static middleware (apparently has to be below request handlers)
-app.use(express.static("public"));
+// app.use(express.static("public"));
+app.use("/", express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({extended: false}))
 
