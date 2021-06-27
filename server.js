@@ -34,20 +34,22 @@ const app = express();
 
 
 //when a get request is sent to /stream (wants information)
-app.get('/stream', (req, res) => {
+app.get('/stream/index.html', (req, res) => {
   //return message data from database
   // console.log("A GET request has been sent to /stream");
   console.log(req.hostname);
   console.log(req.params);
   console.log(req.path);
   console.log(req.originalUrl);
-  if (req.originalUrl == "/stream?page_load=false") {
-    const obj = { msg: `A GET request has been sent to /stream from ${req.path}` };
-    res.send(obj);
-  } else {
-    console.log("Yay! It worked");
-    return res.redirect("/stream")
-  }
+  console.log("GET request to index.html");
+  // res.json("")
+  // if (req.originalUrl == "/stream?page_load=false") {
+  //   const obj = { msg: `A GET request has been sent to /stream from ${req.path}` };
+  //   res.send(obj);
+  // } else {
+  //   console.log("Yay! It worked");
+  //   return res.redirect("/stream")
+  // }
 
   // Message.find({},(err, messages)=> {
     // res.send(messages);
