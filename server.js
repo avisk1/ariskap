@@ -39,7 +39,7 @@ app.get('/stream', (req, res) => {
   // console.log("A GET request has been sent to /stream");
   console.log(req.hostname);
   console.log(req.path);
-  const obj = { msg: "A GET request has been sent to /stream" };
+  const obj = { msg: `A GET request has been sent to /stream from ${req.path}` };
   res.send(obj);
 
   // Message.find({},(err, messages)=> {
