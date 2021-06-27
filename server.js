@@ -37,7 +37,8 @@ app.use(express.urlencoded({extended: false}))
 //when a get request is sent to /stream (wants information)
 app.get('/stream', (req, res) => {
   //return message data from database
-  console.log("A GET request has been sent to /stream");
+  // console.log("A GET request has been sent to /stream");
+  console.log(req);
   const obj = { msg: "A GET request has been sent to /stream" };
   res.send(obj);
 
