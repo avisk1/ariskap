@@ -38,7 +38,8 @@ app.use(express.urlencoded({extended: false}))
 app.get('/stream', (req, res) => {
   //return message data from database
   // console.log("A GET request has been sent to /stream");
-  console.log(req);
+  console.log(req.hostname);
+  console.log(req.path);
   const obj = { msg: "A GET request has been sent to /stream" };
   res.send(obj);
 
