@@ -32,9 +32,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended: false}))
 
-// start the server listening for requests
-app.listen(process.env.PORT || 3000, 
-	() => console.log("Server is running..."));
+
 
 //when a get request is sent to /stream (wants information)
 app.get('/stream', (req, res) => {
@@ -63,6 +61,10 @@ app.post('/stream', (req, res) => {
     // res.sendStatus(200);
   // })
 });
+
+// start the server listening for requests
+app.listen(process.env.PORT || 3000, 
+	() => console.log("Server is running..."));
 
 // use the express-static middleware (apparently has to be below request handlers)
 app.use(express.static("public"));
