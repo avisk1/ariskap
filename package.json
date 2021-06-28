@@ -3,7 +3,8 @@
     "express": "^4.17.1",
     "heroku": "^7.2.0",
     "dotenv": "^10.0.0",
-    "mongoose": "^5.12.14"
+    "mongoose": "^5.12.14",
+    "socket.io": "^4.1.2"
   },
   "name": "app",
   "description": "I hate you, git.",
