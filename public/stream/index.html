@@ -6,6 +6,10 @@
 	<title>Stream - ArisKap</title>
 	<link rel="icon" href="ENTER_HERE" />
 	<link rel="stylesheet" href="../styles.css" type="text/css" />
+	<!-- <script src="./socket.io/socket.io.js"></script> -->
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script> -->
+	<script src="/socket.io/socket.io.js"> </script>
+	<!-- <script src="http://localhost:3000/stream/socket.io/socket.io.js"></script> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -42,25 +46,23 @@
 
 	<div class="under-nav"></div>
 
-	<div class="notice"><span class="warning"></span>Coming soon..</div>
-
-	<!-- <input id="input" />
-
-	<button onclick="save()">Save</button>
-
-	<input type="number" readonly="readonly" id="num" />
-	<button onclick="increment()">Add</button> -->
-
 	<input id="name" placeholder="Name" />
 	<input id="message" placeholder="Message" />
 	<button onclick="submit()">Send</button>
 
 	<p id="data"></p>
-	<button onclick="requestData()">Request Data</button>
+
+<!-- aris is dumb -->
+<!-- </body>body fieldset placeholder -->
 
 	
 	<script src="../script.js"></script>
 	<script>
+		const placeholder = document.getElementById("data");
+		document.addEventListener('keydown', (event) => {
+			if (event.code == "Enter") submit();
+		});
+
 		function submit() {
 			const name = document.getElementById("name");
 			const message = document.getElementById("message");
@@ -68,18 +70,25 @@
 
 			//sending the data
 			const xhr = new XMLHttpRequest();
-			xhr.open("POST", "/stream", true);
+			xhr.open("POST", "/stream/index.html", true);
 			xhr.setRequestHeader('Content-Type', 'application/json');
 			xhr.send(JSON.stringify({
 				name: name.value,
 				message: message.value
 			}));
+			message.value = "";
 		}
 
-		// at=info method=GET path="/stream" host=ariskap.herokuapp.com request_id=1b658949-b651-4ae9-959b-6dd9e90fd18a fwd="174.115.244.87" dyno=web.1 connect=2ms service=5ms status=200 bytes=255 protocol=https
-		
+		//socket.io
+		const socket = io.connect();
+
+		socket.on("message", newMessage);
+
+		function newMessage(message) {
+			placeholder.innerHTML = `${placeholder.innerHTML}${message.name}: ${message.message}<br />`;
+		}
+
 		function requestData() {
-			const placeholder = document.getElementById("data");
 			console.log("Requesting data...");
 
 			//requesting the data
@@ -87,32 +96,20 @@
 			xhr.onreadystatechange = function() { 
 				if (this.readyState == 4 && this.status == 200) {
 					console.log(this.responseText);
-					placeholder.innerHTML = this.responseText;
+					placeholder.innerHTML = "";
+					const messages = JSON.parse(this.responseText);
+					for (let i = 0; i < messages.length; i++) {
+						placeholder.innerHTML = `${placeholder.innerHTML}${messages[i].name}: ${messages[i].message}<br />`;
+					}
 				} else {
 					console.log(this.readyState + ", " + this.status);
 				}
 			}
 			xhr.open("GET", `/stream/index.html`, true); // true for asynchronous 
 			xhr.send();
-
-			// const xhr = new XMLHttpRequest();
-			// xhr.onreadystatechange = () => {
-			// 	console.log(this.readyState);
-			// 	if (this.readyState != 4) return;
-			// 	if (this.status == 200) {
-			// 		// const data = JSON.parse(this.responseText);
-			// 		const data = this.responseText;
-			// 		console.log(data);
-			// 		placeholder.innerHTML = data;
-			// 	} else {
-			// 		console.log(`Failed: ${this.status}`);
-			// 	}
-			// 	// end of state change: it can be after some time (async)
-			// };
-			// xhr.open('GET', "/stream", true);
-			// xhr.send();
 		}
 
+		requestData();
 
 	</script>
 	<!-- <script src="./script.js"></script> -->
